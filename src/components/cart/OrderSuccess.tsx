@@ -55,9 +55,11 @@ export default function OrderSuccess() {
                 <span className="font-display text-xl font-medium">{formatPrice(order.total)}</span>
               </li>
             </ul>
-            <p className="mt-6 text-sm text-ink-soft">Хотите быстрее? Отправьте заказ менеджеру в WhatsApp — состав уже в сообщении.</p>
+            <p className="mt-6 text-sm text-ink-soft">
+              Мы уже открыли WhatsApp с составом заказа — останется нажать «Отправить». Не открылось (браузер заблокировал вкладку)? Нажмите кнопку ниже.
+            </p>
             <a href={whatsappLink(orderWhatsappText(order))} target="_blank" rel="noopener" className="btn btn-whatsapp mt-3">
-              <IconWhatsApp /> Отправить заказ в WhatsApp
+              <IconWhatsApp /> Открыть WhatsApp с заказом
             </a>
           </>
         )}

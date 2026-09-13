@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getOrderableProducts, isDemoMode } from "@/lib/data";
+import { adminOrderTelegramText } from "@/lib/order-message";
 import { unitPriceFor } from "@/lib/pricing";
 import { cleanMultiline, cleanText, clientIp, looksLikeBot, rateLimit } from "@/lib/rate-limit";
 import { adminDb } from "@/lib/supabase";
+import { notifyTelegram } from "@/lib/telegram";
 import { normalizeKzPhone } from "@/lib/text";
 import type { OrderItem } from "@/lib/types";
 
@@ -96,7 +98,29 @@ export async function POST(req: NextRequest) {
     total,
   };
 
+  // Уведомление в Telegram — чтобы узнать о заказе сразу, а не только зайдя в /admin/orders.
+  // Без TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID ничего не делает; сбой не мешает сохранить заказ.
+  const notify = (number: number | null) =>
+    notifyTelegram(
+      adminOrderTelegramText({
+        number,
+        customerType,
+        customerName,
+        customerPhone,
+        companyName,
+        companyBin,
+        needsInvoice: order.needs_invoice,
+        deliveryMethod,
+        city: order.city,
+        address,
+        comment: order.comment,
+        items,
+        total,
+      }),
+    );
+
   if (isDemoMode) {
+    await notify(null);
     return NextResponse.json({ number: null, demo: true, items, total }, { status: 201 });
   }
 
@@ -106,5 +130,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Не удалось сохранить заказ. Позвоните нам — оформим по телефону." }, { status: 500 });
   }
 
+  await notify(data.number);
   return NextResponse.json({ number: data.number, items, total }, { status: 201 });
 }

@@ -8,7 +8,8 @@ import { formatPhoneInput } from "@/lib/text";
 import { SITE } from "@/lib/site";
 import { useHydrated } from "@/lib/useHydrated";
 import { cartTotals, useCart } from "@/store/cart";
-import type { OrderSummary } from "@/lib/order-message";
+import { orderWhatsappText, type OrderSummary } from "@/lib/order-message";
+import { whatsappLink } from "@/lib/site";
 import CartLine from "./CartLine";
 
 export const LAST_ORDER_KEY = "sanlux-last-order";
@@ -81,6 +82,11 @@ export default function Checkout() {
         items: data.items,
         total: data.total,
       };
+
+      // Открываем WhatsApp с готовым текстом заказа сразу, без лишнего клика на сайте —
+      // отправить сообщение в самом WhatsApp всё равно должен человек, это ограничение WhatsApp.
+      window.open(whatsappLink(orderWhatsappText(summary)), "_blank", "noopener");
+
       try {
         sessionStorage.setItem(LAST_ORDER_KEY, JSON.stringify({ ...summary, demo: Boolean(data.demo) }));
       } catch {
