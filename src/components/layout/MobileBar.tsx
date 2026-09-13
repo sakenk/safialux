@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { SITE, whatsappLink } from "@/lib/site";
 import { useHydrated } from "@/lib/useHydrated";
 import { cartTotals, useCart } from "@/store/cart";
+import { useSearch } from "@/store/search";
 import { IconCart, IconGrid, IconHome, IconSearch, IconWhatsApp } from "@/components/icons";
 
 export default function MobileBar() {
@@ -12,6 +13,8 @@ export default function MobileBar() {
   const items = useCart((s) => s.items);
   const openDrawer = useCart((s) => s.openDrawer);
   const count = useHydrated() ? cartTotals(items).count : 0;
+  const searchOpen = useSearch((s) => s.isOpen);
+  const openSearch = useSearch((s) => s.openSearch);
 
   const item = "flex flex-1 flex-col items-center justify-center gap-0.5 text-[11px]";
   const color = (active: boolean) => (active ? "text-cobalt" : "text-ink-soft");
@@ -27,9 +30,16 @@ export default function MobileBar() {
       <Link href="/catalog" className={`${item} ${color(pathname.startsWith("/catalog"))}`}>
         <IconGrid /> Каталог
       </Link>
-      <Link href="/catalog?focus=search" className={`${item} text-ink-soft`}>
+      <button
+        type="button"
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          openSearch();
+        }}
+        className={`${item} ${color(searchOpen)}`}
+      >
         <IconSearch /> Поиск
-      </Link>
+      </button>
       <button type="button" onClick={openDrawer} className={`${item} relative text-ink-soft`}>
         <IconCart /> Корзина
         {count > 0 && (

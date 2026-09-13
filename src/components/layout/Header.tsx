@@ -4,6 +4,7 @@ import { getCategories } from "@/lib/data";
 import { SITE } from "@/lib/site";
 import { IconPhone, IconSearch } from "@/components/icons";
 import CartButton from "./CartButton";
+import MobileSearch from "./MobileSearch";
 import NavLinks from "./NavLinks";
 
 export default async function Header() {
@@ -30,6 +31,8 @@ export default async function Header() {
         <Link href="/" className="shrink-0" aria-label={`${SITE.name} — на главную`}>
           <Image src="/brand/sanlux-logo.png" alt={SITE.name} width={205} height={51} priority className="h-7 w-auto md:h-9" />
         </Link>
+
+        <MobileSearch />
 
         <form action="/catalog" role="search" className="relative hidden flex-1 md:block">
           <label htmlFor="header-search" className="sr-only">Поиск по каталогу</label>
