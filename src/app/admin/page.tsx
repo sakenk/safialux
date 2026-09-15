@@ -10,7 +10,7 @@ export default async function AdminLoginPage() {
   return (
     <div className="tile-grid flex min-h-screen items-center justify-center p-4">
       <div className="w-full max-w-sm rounded-[28px] border border-grout bg-porcelain p-8 shadow-lift">
-        <Image src="/brand/sanlux-logo.png" alt="SanLux" width={205} height={51} className="h-9 w-auto" priority />
+        <Image src="/brand/SafiaLux.png" alt="SafiaLux" width={701} height={502} className="h-14 w-auto" priority />
         <h1 className="mt-6 text-2xl font-semibold">Вход в админку</h1>
         {isAdminConfigured() ? (
           <LoginForm />

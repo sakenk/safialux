@@ -43,7 +43,7 @@ export function localBusinessJsonLd() {
     name: SITE.name,
     description: SITE.description,
     url: SITE.url,
-    logo: absoluteUrl("/brand/sanlux-logo.png"),
+    logo: absoluteUrl("/brand/SafiaLux.png"),
     image: absoluteUrl("/photos/interior.jpg"),
     telephone: SITE.phones[0].tel,
     email: SITE.email,

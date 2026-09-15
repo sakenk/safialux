@@ -28,7 +28,7 @@ export default function CommercialOffer() {
       <article className="mx-auto max-w-[210mm] bg-white p-6 text-[13px] leading-relaxed text-ink shadow-lift sm:p-[14mm] print:p-0 print:shadow-none">
         <header className="flex flex-wrap items-start justify-between gap-4 border-b-2 border-ink pb-5">
           <div>
-            <Image src="/brand/sanlux-logo.png" alt={SITE.name} width={205} height={51} className="h-10 w-auto" />
+            <Image src="/brand/SafiaLux.png" alt={SITE.name} width={701} height={502} className="h-16 w-auto" />
             <p className="mt-2 text-ink-soft">Продажа сантехнического оборудования</p>
           </div>
           <div className="text-right text-ink-soft">

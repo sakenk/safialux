@@ -16,7 +16,7 @@ export default async function PrintOrderPage({ params }: { params: Promise<{ id:
       <div className="mb-4 flex justify-end print:hidden"><PrintButton /></div>
       <header className="flex items-start justify-between border-b-2 border-ink pb-4">
         <div>
-          <Image src="/brand/sanlux-logo.png" alt="SanLux" width={205} height={51} className="h-9 w-auto" />
+          <Image src="/brand/SafiaLux.png" alt="SafiaLux" width={701} height={502} className="h-14 w-auto" />
           <p className="mt-1 text-ink-soft">{SITE.address.city}, {SITE.address.street} · {SITE.phones[0].display}</p>
         </div>
         <div className="text-right">

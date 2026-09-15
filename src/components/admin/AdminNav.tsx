@@ -26,7 +26,7 @@ export default function AdminNav({ newOrders, newLeads }: { newOrders: number; n
     <header className="sticky top-0 z-30 border-b border-grout bg-porcelain print:hidden">
       <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-4 sm:px-6">
         <Link href="/admin/orders" className="shrink-0 py-3">
-          <Image src="/brand/sanlux-logo.png" alt="SanLux" width={205} height={51} className="h-7 w-auto" />
+          <Image src="/brand/SafiaLux.png" alt="SafiaLux" width={701} height={502} className="h-10 w-auto" />
         </Link>
         <nav className="scrollbar-none flex flex-1 overflow-x-auto">
           {links.map((l) => {

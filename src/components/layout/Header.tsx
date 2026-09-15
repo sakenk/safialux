@@ -29,7 +29,7 @@ export default async function Header() {
 
       <div className="container-x flex h-16 items-center gap-3 md:h-[72px] md:gap-6">
         <Link href="/" className="shrink-0" aria-label={`${SITE.name} — на главную`}>
-          <Image src="/brand/sanlux-logo.png" alt={SITE.name} width={205} height={51} priority className="h-7 w-auto md:h-9" />
+          <Image src="/brand/SafiaLux.png" alt={SITE.name} width={701} height={502} priority className="h-10 w-auto md:h-12" />
         </Link>
 
         <MobileSearch />

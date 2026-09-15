@@ -11,7 +11,7 @@ export default async function Footer() {
     <footer className="bg-night pb-24 text-white/80 md:pb-0">
       <div className="container-x grid gap-10 py-14 md:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
         <div className="space-y-4">
-          <Image src="/brand/sanlux-logo.png" alt={SITE.name} width={205} height={51} className="h-9 w-auto" />
+          <Image src="/brand/SafiaLux.png" alt={SITE.name} width={701} height={502} className="h-14 w-auto" />
           <p className="max-w-xs text-sm leading-relaxed text-white/60">
             Продажа и доставка сантехники по Казахстану. Розница, опт, работа с ИП, ТОО и участниками тендеров.
           </p>
