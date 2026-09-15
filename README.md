@@ -19,11 +19,7 @@ npm run dev
 
 ## Подключение
 
-1. **Supabase** — создать проект, открыть SQL Editor, выполнить `supabase/migrations/0001_init.sql` (таблицы, RLS, 5 категорий и 12 брендов). В `.env.local` — `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY`.
-2. **Cloudinary** — `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET` (фото кладутся в папку `sanlux/`).
-3. **Админка** — `ADMIN_PASSWORD` и длинный случайный `ADMIN_SESSION_SECRET`.
-4. **Уведомления о заказах в Telegram** (необязательно, но рекомендуется) — `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID`, инструкция в `.env.local.example`. При каждом заказе (в том числе в демо-режиме) бот присылает состав, сумму, контакты и адрес доставки, если она нужна — без этого узнать о заказе можно только зайдя в `/admin/orders`.
-5. **SEO** — `NEXT_PUBLIC_SITE_URL=https://sanlux.kz`; коды подтверждения Google Search Console и Яндекс.Вебмастера — в `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` / `NEXT_PUBLIC_YANDEX_VERIFICATION`.
+Полный порядок действий — база данных, миграция, переменные окружения, деплой, безопасность — в [`DEPLOY.md`](./DEPLOY.md).
 
 ## Где что лежит
 
