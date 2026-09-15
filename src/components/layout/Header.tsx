@@ -32,8 +32,6 @@ export default async function Header() {
           <Image src="/brand/SafiaLux.png" alt={SITE.name} width={701} height={502} priority className="h-10 w-auto md:h-12" />
         </Link>
 
-        <MobileSearch />
-
         <form action="/catalog" role="search" className="relative hidden flex-1 md:block">
           <label htmlFor="header-search" className="sr-only">Поиск по каталогу</label>
           <input
@@ -62,6 +60,8 @@ export default async function Header() {
           <CartButton />
         </div>
       </div>
+
+      <MobileSearch />
 
       <nav aria-label="Разделы каталога" className="border-t border-grout-soft">
         <div className="container-x">

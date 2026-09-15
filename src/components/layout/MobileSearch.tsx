@@ -9,7 +9,6 @@ export default function MobileSearch() {
   const router = useRouter();
   const pathname = usePathname();
   const isOpen = useSearch((s) => s.isOpen);
-  const toggleSearch = useSearch((s) => s.toggleSearch);
   const closeSearch = useSearch((s) => s.closeSearch);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -32,17 +31,6 @@ export default function MobileSearch() {
 
   return (
     <div className="md:hidden">
-      <button
-        type="button"
-        onClick={toggleSearch}
-        aria-label="Поиск по каталогу"
-        aria-expanded={isOpen}
-        aria-controls="mobile-search"
-        className="grid size-11 place-items-center rounded-full border border-grout"
-      >
-        <IconSearch width={18} height={18} />
-      </button>
-
       {isOpen && (
         <div id="mobile-search" className="absolute inset-x-0 top-full border-b border-grout bg-porcelain shadow-sm">
           <form
