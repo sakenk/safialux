@@ -12,7 +12,7 @@ export default function MapEmbed() {
   return (
     <div className="relative min-h-80 bg-glaze">
       {show ? (
-        <iframe src={src} title="SanLux на карте" className="absolute inset-0 h-full w-full border-0" loading="lazy" allowFullScreen />
+        <iframe src={src} title="SafiaLux на карте" className="absolute inset-0 h-full w-full border-0" loading="lazy" allowFullScreen />
       ) : (
         <div className="tile-grid absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center">
           <p className="font-mono text-xs uppercase tracking-wider text-chrome">

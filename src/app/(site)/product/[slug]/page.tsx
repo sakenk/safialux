@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = await getProductBySlug(slug);
   if (!p) return {};
-  const title = p.meta_title || `${p.name}${p.brand ? ` ${p.brand.name}` : ""} — купить в Астане за ${formatPrice(p.price)} | ${SITE.name}`;
+  const title = p.meta_title || `${p.name} — купить в Астане за ${formatPrice(p.price)} | ${SITE.name}`;
   const description =
     p.meta_description ||
     truncate(

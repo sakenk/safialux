@@ -9,10 +9,17 @@ import { BrandsMarquee, Faq, Reasons, Steps } from "@/components/home/InfoSectio
 import LeadForm from "@/components/forms/LeadForm";
 import { getBrands, getCategories, getCategoryStats, getFeaturedProducts } from "@/lib/data";
 import { FAQ } from "@/lib/content";
-import { faqJsonLd } from "@/lib/seo";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 import { sortedTiers } from "@/lib/pricing";
 
 export const revalidate = 3600;
+
+export const metadata = pageMetadata({
+  title: `${SITE.name} — сантехника в Астане: опт и розница`,
+  description: SITE.description,
+  path: "/",
+});
 
 export default async function HomePage() {
   const [categories, brands, stats, featured] = await Promise.all([

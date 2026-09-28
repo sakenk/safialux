@@ -1,10 +1,12 @@
 export const SITE = {
-  name: "SanLux",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, ""),
+  name: "SafiaLux",
+  alternateName: ["Сафиа Люкс", "SafiaLux.kz"],
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://safialux.kz").replace(/\/$/, ""),
   city: "Астана",
   slogan: "Унитазы и сантехника для вашего дома",
   description:
-    "Магазин сантехники в Астане: унитазы, ванны, раковины, смесители и инсталляции. Опт и розница, работаем с ИП, ТОО и тендерами. Доставка по Казахстану.",
+    "Сантехника в Астане: унитазы, ванны, раковины, смесители, инсталляции. Опт от 10 шт., счёт для ТОО и ИП, доставка по Казахстану. ☎ +7 707 444-72-71",
+  ogImage: "/photos/interior.jpg",
   phones: [
     { display: "+7 (707) 444-72-71", tel: "+77074447271" },
     { display: "+7 (705) 631-09-30", tel: "+77056310930" },

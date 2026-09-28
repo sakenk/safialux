@@ -1,4 +1,4 @@
-# SanLux — интернет-магазин сантехники
+# SafiaLux — интернет-магазин сантехники
 
 Next.js 16 (App Router) · React 19 · Tailwind 4 · Zustand · Supabase · Cloudinary. Архитектура — как у vauva.
 

@@ -5,8 +5,8 @@ import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: `Контакты магазина сантехники в Астане — ${SITE.address.street} | ${SITE.name}`,
-  description: `Магазин SanLux: ${SITE.address.city}, ${SITE.address.street}, ${SITE.address.detail}. Телефон ${SITE.phones[0].display}, ${SITE.hours.label.toLowerCase()}.`,
+  title: `Контакты: магазин сантехники в Астане | ${SITE.name}`,
+  description: `Магазин ${SITE.name}: ${SITE.address.city}, ${SITE.address.street}, ${SITE.address.detail}. Телефон ${SITE.phones[0].display}, ${SITE.hours.label.toLowerCase()}.`,
   path: "/contacts",
 });
 

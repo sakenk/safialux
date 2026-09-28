@@ -9,7 +9,7 @@ import { SITE, whatsappLink } from "@/lib/site";
 import { IconWhatsApp } from "@/components/icons";
 
 export const metadata = pageMetadata({
-  title: `Сантехника оптом в Астане — для застройщиков, ИП, ТОО и тендеров | ${SITE.name}`,
+  title: `Сантехника оптом в Астане для ИП, ТОО и тендеров | ${SITE.name}`,
   description:
     "Оптовые поставки сантехники в Астане и по Казахстану: унитазы, ванны, раковины, смесители, инсталляции партиями от 10 штук. Счёт с НДС, доставка на объект, КП за 24 часа.",
   path: "/optom",

@@ -16,7 +16,8 @@ export function pageMetadata({
   image?: string | null;
   noindex?: boolean;
 }): Metadata {
-  const images = image ? [{ url: image.startsWith("http") ? image : absoluteUrl(image) }] : undefined;
+  const cover = image || SITE.ogImage;
+  const images = [{ url: cover.startsWith("http") ? cover : absoluteUrl(cover) }];
   return {
     title: { absolute: title },
     description,
@@ -30,7 +31,7 @@ export function pageMetadata({
       url: path,
       images,
     },
-    twitter: { card: images ? "summary_large_image" : "summary", title, description },
+    twitter: { card: "summary_large_image", title, description, images: images.map((i) => i.url) },
     robots: noindex ? { index: false, follow: true } : undefined,
   };
 }
@@ -41,9 +42,10 @@ export function localBusinessJsonLd() {
     "@type": "HomeAndConstructionBusiness",
     "@id": absoluteUrl("/#business"),
     name: SITE.name,
+    alternateName: SITE.alternateName,
     description: SITE.description,
     url: SITE.url,
-    logo: absoluteUrl("/brand/SafiaLux.png"),
+    logo: absoluteUrl("/brand/sl.png"),
     image: absoluteUrl("/photos/interior.jpg"),
     telephone: SITE.phones[0].tel,
     email: SITE.email,
@@ -72,8 +74,11 @@ export function websiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": absoluteUrl("/#website"),
     name: SITE.name,
+    alternateName: SITE.alternateName,
     url: SITE.url,
+    publisher: { "@id": absoluteUrl("/#business") },
     inLanguage: "ru",
     potentialAction: {
       "@type": "SearchAction",

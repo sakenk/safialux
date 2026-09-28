@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: `Заказ оформлен | ${SITE.name}`,
-  description: "Спасибо за заказ в SanLux.",
+  description: "Спасибо за заказ в SafiaLux.",
   path: "/order/success",
   noindex: true,
 });

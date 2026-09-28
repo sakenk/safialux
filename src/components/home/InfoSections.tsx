@@ -7,7 +7,7 @@ import SectionHeader from "@/components/SectionHeader";
 export function Reasons() {
   return (
     <section className="container-x py-14 md:py-20">
-      <SectionHeader eyebrow="Почему SanLux" title="Почему покупатели выбирают наш магазин" />
+      <SectionHeader eyebrow="Почему SafiaLux" title="Почему покупатели выбирают наш магазин" />
       <ul className="grid overflow-hidden rounded-[var(--radius-card)] border border-grout bg-grout sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 1 }}>
         {REASONS.map((r) => (
           <li key={r.title} className="bg-porcelain p-6 sm:p-7">

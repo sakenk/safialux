@@ -198,7 +198,7 @@ export default function ProductForm({
         </Card>
 
         <Card title="SEO">
-          <Field label="Адрес страницы" hint={`sanlux.kz/product/${effectiveSlug || "…"}`}>
+          <Field label="Адрес страницы" hint={`safialux.kz/product/${effectiveSlug || "…"}`}>
             <input
               value={effectiveSlug}
               onChange={(e) => {
@@ -208,7 +208,7 @@ export default function ProductForm({
               className="field font-mono"
             />
           </Field>
-          <Field label="Title" hint={`Если пусто: «${name || "Название"} — купить в Астане за ${basePrice ? formatPrice(basePrice) : "…"} | SanLux». ${metaTitle.length}/70`}>
+          <Field label="Title" hint={`Если пусто: «${name || "Название"} — купить в Астане за ${basePrice ? formatPrice(basePrice) : "…"} | SafiaLux». ${metaTitle.length}/70`}>
             <input value={metaTitle} onChange={(e) => setMetaTitle(e.target.value)} className="field" maxLength={160} />
           </Field>
           <Field label="Description" hint={`Если пусто — соберётся из цены и описания. ${metaDescription.length}/160`}>

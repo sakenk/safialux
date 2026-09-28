@@ -29,7 +29,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `Сантехника в Астане — унитазы, ванны, смесители оптом и в розницу | ${SITE.name}`,
+    default: `${SITE.name} — сантехника в Астане: опт и розница`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,

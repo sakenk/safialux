@@ -18,7 +18,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const fromPrice = stats ? ` от ${formatPrice(stats.minPrice)}` : "";
 
   return pageMetadata({
-    title: category.seo_title || `${category.name} в Астане — купить${fromPrice}, опт и розница | ${SITE.name}`,
+    title: category.seo_title || `${category.name} в Астане — купить${fromPrice} | ${SITE.name}`,
     description:
       category.seo_description ||
       `${category.name} в Астане${fromPrice}. ${category.description ?? ""} Оптовые цены от 10 штук, доставка по Казахстану.`.trim(),

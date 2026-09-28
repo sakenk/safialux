@@ -9,8 +9,8 @@ import { pluralRu } from "@/lib/text";
 export const revalidate = 3600;
 
 export const metadata = pageMetadata({
-  title: `Бренды сантехники — Grohe, AM.PM, Cersanit и другие | ${SITE.name}`,
-  description: "Производители сантехники, которых мы продаём в Астане: Grohe, Gappo, Saniteco, Triton, Cersanit, AM.PM, Lusso, Santek и другие.",
+  title: `Бренды сантехники: Grohe, AM.PM, Cersanit | ${SITE.name}`,
+  description: `Производители сантехники в наличии в Астане: Grohe, Gappo, Saniteco, Triton, Cersanit, AM.PM, Lusso, Santek и другие. Оптовые цены и доставка по Казахстану.`,
   path: "/brands",
 });
 

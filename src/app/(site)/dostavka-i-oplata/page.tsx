@@ -4,7 +4,7 @@ import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: `Доставка и оплата сантехники по Астане и Казахстану | ${SITE.name}`,
+  title: `Доставка и оплата сантехники по Казахстану | ${SITE.name}`,
   description:
     "Доставка сантехники по Астане бесплатно от 50 000 ₸, в регионы Казахстана — от 5 000 ₸. Самовывоз через 2 часа. Оплата наличными, картой, по счёту, рассрочка 0%.",
   path: "/dostavka-i-oplata",

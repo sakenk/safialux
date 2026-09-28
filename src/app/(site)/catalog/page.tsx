@@ -10,10 +10,9 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const params = parseCatalogParams(await searchParams);
   return pageMetadata({
     title: params.q
-      ? `Поиск «${params.q}» — каталог сантехники | ${SITE.name}`
-      : `Каталог сантехники в Астане — цены, опт и розница | ${SITE.name}`,
-    description:
-      "Каталог сантехники SanLux: ванны, раковины, унитазы, смесители и инсталляции. Цены в тенге, оптовые скидки от 10 штук, доставка по Казахстану.",
+      ? `Поиск «${params.q}» — каталог | ${SITE.name}`
+      : `Каталог сантехники в Астане: цены, опт | ${SITE.name}`,
+    description: `Каталог сантехники ${SITE.name}: ванны, раковины, унитазы, смесители и инсталляции. Цены в тенге, оптовые скидки от 10 штук, доставка по Казахстану.`,
     path: params.page > 1 && !params.hasFilters ? `/catalog?page=${params.page}` : "/catalog",
     noindex: params.hasFilters,
   });

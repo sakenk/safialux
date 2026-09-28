@@ -93,7 +93,7 @@ export default function TaxonomyForm({ kind, item }: { kind: Kind; item?: Catego
             <Field label="Название *">
               <input required value={name} onChange={(e) => setName(e.target.value)} className="field" maxLength={80} />
             </Field>
-            <Field label="Адрес страницы" hint={`sanlux.kz${copy.publicPath}${effectiveSlug || "…"}`}>
+            <Field label="Адрес страницы" hint={`safialux.kz${copy.publicPath}${effectiveSlug || "…"}`}>
               <input
                 value={effectiveSlug}
                 onChange={(e) => {

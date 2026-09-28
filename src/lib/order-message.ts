@@ -15,7 +15,7 @@ export interface OrderSummary {
 /** Текст заказа для WhatsApp — менеджер видит состав сразу, без входа в админку. */
 export function orderWhatsappText(o: OrderSummary) {
   const lines = [
-    o.number ? `Здравствуйте! Оформил(а) заказ №${o.number} на сайте SanLux.` : "Здравствуйте! Хочу оформить заказ на сайте SanLux.",
+    o.number ? `Здравствуйте! Оформил(а) заказ №${o.number} на сайте SafiaLux.` : "Здравствуйте! Хочу оформить заказ на сайте SafiaLux.",
     "",
     ...o.items.map(
       (i, idx) =>

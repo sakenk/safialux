@@ -76,7 +76,7 @@ export default async function AdminOrderPage({ params }: { params: Promise<{ id:
             <p className="font-mono">{formatKzPhone(order.customer_phone)}</p>
             <div className="flex flex-wrap gap-2">
               <a href={`tel:+${phoneDigits}`} className="btn btn-dark btn-sm">Позвонить</a>
-              <a href={whatsappLink(`Здравствуйте, ${order.customer_name}! Это SanLux, по вашему заказу №${order.number}.`).replace(/wa\.me\/\d+/, `wa.me/${phoneDigits}`)} target="_blank" rel="noopener" className="btn btn-whatsapp btn-sm">WhatsApp</a>
+              <a href={whatsappLink(`Здравствуйте, ${order.customer_name}! Это SafiaLux, по вашему заказу №${order.number}.`).replace(/wa\.me\/\d+/, `wa.me/${phoneDigits}`)} target="_blank" rel="noopener" className="btn btn-whatsapp btn-sm">WhatsApp</a>
             </div>
             <div className="border-t border-grout-soft pt-3">
               <p className="text-chrome">Получение</p>
