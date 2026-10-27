@@ -3,10 +3,15 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import LeadForm from "@/components/forms/LeadForm";
 import { Faq } from "@/components/home/InfoSections";
+import WholesaleCalculator from "@/components/home/WholesaleCalculator";
 import { WHOLESALE_POINTS } from "@/lib/content";
+import { getFeaturedProducts } from "@/lib/data";
+import { sortedTiers } from "@/lib/pricing";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { SITE, whatsappLink } from "@/lib/site";
 import { IconWhatsApp } from "@/components/icons";
+
+export const revalidate = 3600;
 
 export const metadata = pageMetadata({
   title: `Сантехника оптом в Астане для ИП, ТОО и тендеров | ${SITE.name}`,
@@ -42,7 +47,12 @@ const AUDIENCE = [
   { title: "Гостиницы и офисы", text: "Однотипная сантехника на десятки номеров и санузлов." },
 ];
 
-export default function WholesalePage() {
+export default async function WholesalePage() {
+  const featured = await getFeaturedProducts(8);
+  const sample =
+    featured.find((p) => sortedTiers(p.wholesale_prices).length >= 2) ??
+    featured.find((p) => sortedTiers(p.wholesale_prices).length > 0);
+
   return (
     <>
       <JsonLd
@@ -93,6 +103,33 @@ export default function WholesalePage() {
           ))}
         </ul>
       </section>
+
+      {sample && (
+        <section className="bg-night text-white">
+          <div className="container-x grid items-center gap-10 py-14 md:py-20 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p className="eyebrow mb-3 !text-brass">Цены на примере</p>
+              <h2 className="text-3xl font-semibold sm:text-[2.4rem]">Посчитайте партию сами</h2>
+              <p className="mt-4 max-w-xl text-[17px] text-white/70">
+                Цена за штуку снижается по ступеням: чем больше партия, тем ниже цена. Так выглядит расчёт на одной из
+                наших моделей. Для остальных позиций ступени указаны в карточке товара.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="#kp" className="btn btn-primary">Запросить КП на свою партию</a>
+                <Link href="/catalog" className="btn border border-white/25 text-white hover:border-white">Собрать заказ в каталоге</Link>
+              </div>
+            </div>
+            <WholesaleCalculator
+              sample={{
+                name: sample.name,
+                slug: sample.slug,
+                price: sample.price,
+                tiers: sortedTiers(sample.wholesale_prices),
+              }}
+            />
+          </div>
+        </section>
+      )}
 
       <section className="border-y border-grout bg-porcelain">
         <div className="container-x py-14 md:py-20">
