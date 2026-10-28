@@ -12,7 +12,10 @@ export default async function AdminProductsPage() {
           <h1 className="text-2xl font-semibold">Товары</h1>
           <p className="text-sm text-chrome">{products.length} в каталоге, из них скрыто: {products.filter((p) => !p.is_published).length}</p>
         </div>
-        <Link href="/admin/products/new" className="btn btn-primary btn-sm">+ Добавить товар</Link>
+        <div className="flex gap-2">
+          <Link href="/admin/products/import" className="btn btn-ghost btn-sm">Импорт CSV</Link>
+          <Link href="/admin/products/new" className="btn btn-primary btn-sm">+ Добавить товар</Link>
+        </div>
       </div>
       <ProductsTable
         products={products}
