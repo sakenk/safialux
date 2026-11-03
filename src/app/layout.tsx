@@ -51,6 +51,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru" className={`${unbounded.variable} ${golos.variable} ${jetbrains.variable}`}>
+      <head>
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="bHt27Lvvg7lCtE+rZ5W0Xg" async />
+      </head>
       <body>
         {children}
         <Analytics />
