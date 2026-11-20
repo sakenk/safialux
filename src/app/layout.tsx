@@ -29,7 +29,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — сантехника в Астане: опт и розница`,
+    default: `${SITE.name} — сантехника оптом и в розницу в Астане`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,

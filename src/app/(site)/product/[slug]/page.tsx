@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description =
     p.meta_description ||
     truncate(
-      `${p.name} по цене ${formatPrice(p.price)}${p.in_stock ? ", в наличии" : ""}. ${p.description ?? ""} Оптовые цены, доставка по Казахстану, гарантия.`,
+      `${p.name} по цене ${formatPrice(p.price)}${p.in_stock ? ", в наличии" : ""}. ${p.description ?? ""} Опт от 10 шт., счёт для ТОО и ИП, доставка по Астане и Казахстану.`,
       160,
     );
   return pageMetadata({ title, description, path: `/product/${p.slug}`, image: p.images[0]?.url });

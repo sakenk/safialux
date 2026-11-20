@@ -11,6 +11,16 @@ const TILDA_REDIRECTS: Record<string, string> = {
   "/injeniernaia_santehnika": "/catalog",
 };
 
+// Основной адрес без www: все запросы на www переезжают на него одним переходом.
+const SITE_HOST = new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://safialux.kz").host;
+
+const SECURITY_HEADERS = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+];
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
@@ -20,12 +30,23 @@ const nextConfig: NextConfig = {
     deviceSizes: [360, 640, 768, 1024, 1280, 1600],
     imageSizes: [64, 128, 240, 320, 480],
   },
+  async headers() {
+    return [{ source: "/:path*", headers: SECURITY_HEADERS }];
+  },
   async redirects() {
-    return Object.entries(TILDA_REDIRECTS).map(([source, destination]) => ({
-      source,
-      destination,
-      permanent: true,
-    }));
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host" as const, value: `www.${SITE_HOST}` }],
+        destination: `https://${SITE_HOST}/:path*`,
+        permanent: true,
+      },
+      ...Object.entries(TILDA_REDIRECTS).map(([source, destination]) => ({
+        source,
+        destination,
+        permanent: true,
+      })),
+    ];
   },
 };
 

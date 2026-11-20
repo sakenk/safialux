@@ -17,7 +17,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     title: brand.seo_title || `${brand.name} в Астане — купить, опт и розница | ${SITE.name}`,
     description:
       brand.seo_description ||
-      `Купить сантехнику ${brand.name} в Астане: наличие, цены в тенге, оптовые скидки для застройщиков и доставка по Казахстану.`,
+      `Купить сантехнику ${brand.name} в Астане: наличие, цены в тенге, оптовые скидки от 10 штук, счёт для ТОО и ИП, доставка по Астане и Казахстану.`,
     path: `/brand/${brand.slug}`,
     image: brand.logo_url,
     noindex: query.hasFilters,

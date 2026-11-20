@@ -14,9 +14,9 @@ import { IconWhatsApp } from "@/components/icons";
 export const revalidate = 3600;
 
 export const metadata = pageMetadata({
-  title: `Сантехника оптом в Астане для ИП, ТОО и тендеров | ${SITE.name}`,
+  title: `Сантехника Астана оптом: от 10 шт, счёт для ТОО и ИП | ${SITE.name}`,
   description:
-    "Оптовые поставки сантехники в Астане и по Казахстану: унитазы, ванны, раковины, смесители, инсталляции партиями от 10 штук. Счёт с НДС, доставка на объект, КП за 24 часа.",
+    "Сантехника оптом в Астане: унитазы, ванны, раковины, смесители, инсталляции партиями от 10 штук. Счёт для ТОО и ИП, доставка на объект и по Казахстану, КП за 24 часа.",
   path: "/optom",
   image: "/photos/showroom-3.jpg",
 });
@@ -69,10 +69,10 @@ export default async function WholesalePage() {
         <div className="container-x grid items-center gap-10 py-12 md:py-20 lg:grid-cols-2">
           <div>
             <p className="eyebrow mb-4 !text-brass">Опт · ИП · ТОО · тендеры</p>
-            <h1 className="text-[2rem] font-semibold sm:text-5xl">Сантехника оптом для объектов в Астане и по Казахстану</h1>
+            <h1 className="text-[2rem] font-semibold sm:text-5xl">Сантехника оптом в Астане для объектов и по Казахстану</h1>
             <p className="mt-5 max-w-xl text-[17px] text-white/70">
               Поставляем унитазы, ванны, раковины, смесители и инсталляции партиями — от 10 до нескольких сотен штук одной модели.
-              Счёт с НДС, доставка на объект, коммерческое предложение за 24 часа.
+              Счёт для ИП и ТОО, доставка на объект, коммерческое предложение за 24 часа.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#kp" className="btn btn-primary">Запросить КП</a>

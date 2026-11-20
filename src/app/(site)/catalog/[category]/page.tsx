@@ -21,7 +21,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     title: category.seo_title || `${category.name} в Астане — купить${fromPrice} | ${SITE.name}`,
     description:
       category.seo_description ||
-      `${category.name} в Астане${fromPrice}. ${category.description ?? ""} Оптовые цены от 10 штук, доставка по Казахстану.`.trim(),
+      `${category.name} в Астане${fromPrice}. ${category.description ?? ""} Оптовые цены от 10 штук, счёт для ТОО и ИП, доставка по Астане и Казахстану.`.trim(),
     path:
       query.page > 1 && !query.hasFilters ? `/catalog/${category.slug}?page=${query.page}` : `/catalog/${category.slug}`,
     image: category.image_url,

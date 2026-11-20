@@ -16,7 +16,7 @@ import { sortedTiers } from "@/lib/pricing";
 export const revalidate = 3600;
 
 export const metadata = pageMetadata({
-  title: `${SITE.name} — сантехника в Астане: опт и розница`,
+  title: `${SITE.name} — сантехника оптом и в розницу в Астане`,
   description: SITE.description,
   path: "/",
 });
