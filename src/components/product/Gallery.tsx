@@ -35,7 +35,7 @@ export default function Gallery({ images, name, label }: { images: ProductImage[
   }
 
   return (
-    <div className="space-y-3">
+    <div className="min-w-0 space-y-3">
       <button
         type="button"
         onClick={() => setZoom(true)}
