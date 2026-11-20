@@ -62,7 +62,7 @@ export default async function ProductPage({ params }: Props) {
         </ol>
       </nav>
 
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12">
         <Gallery images={product.images} name={product.name} label={product.category?.name} />
 
         <div className="space-y-6">
@@ -106,7 +106,7 @@ export default async function ProductPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12">
+      <div className="mt-14 grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12">
         <div className="space-y-10">
           {product.specs.length > 0 && (
             <section>
