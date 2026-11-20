@@ -95,7 +95,7 @@ export default async function ProductPage({ params }: Props) {
             {[
               ["Гарантия", "Официальная, до 5 лет"],
               ["Доставка", "По Астане бесплатно от 50 000 ₸"],
-              ["Самовывоз", "Через 2 часа, рынок «Шанхай»"],
+              ["Самовывоз", "Через 2 часа, две точки в Астане"],
             ].map(([t, d]) => (
               <li key={t} className="rounded-2xl border border-grout bg-porcelain px-4 py-3">
                 <p className="font-semibold">{t}</p>

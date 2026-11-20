@@ -58,6 +58,16 @@ export function localBusinessJsonLd() {
       addressCountry: SITE.address.country,
     },
     geo: { "@type": "GeoCoordinates", latitude: SITE.geo.lat, longitude: SITE.geo.lng },
+    location: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: `${SITE.address2.street}, ${SITE.address2.detail}`,
+        addressLocality: SITE.address2.city,
+        addressCountry: SITE.address2.country,
+      },
+      geo: { "@type": "GeoCoordinates", latitude: SITE.geo2.lat, longitude: SITE.geo2.lng },
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

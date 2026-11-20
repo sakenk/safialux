@@ -39,11 +39,13 @@ export default async function Footer() {
 
         <div className="space-y-3 text-[15px]">
           <p className="eyebrow mb-4 !text-white/40">Магазин</p>
-          <address className="not-italic leading-relaxed">
-            {SITE.address.city}, {SITE.address.street}
-            <br />
-            <span className="text-white/60">{SITE.address.detail}</span>
-          </address>
+          {[SITE.address, SITE.address2].map((a) => (
+            <address key={a.street} className="not-italic leading-relaxed">
+              {a.city}, {a.street}
+              <br />
+              <span className="text-white/60">{a.detail}</span>
+            </address>
+          ))}
           <p className="text-white/60">{SITE.hours.label}</p>
           <div className="space-y-1">
             {SITE.phones.map((p) => (

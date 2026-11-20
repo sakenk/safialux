@@ -178,7 +178,7 @@ export default function Checkout() {
             />
             {delivery === "pickup" ? (
               <p className="text-ink-soft">
-                {SITE.address.city}, {SITE.address.street}, {SITE.address.detail}. {SITE.hours.label}. Заказ в наличии соберём за 2 часа.
+                {SITE.address.city}, {SITE.address.street}, {SITE.address.detail}, или {SITE.address2.street}, {SITE.address2.detail}. {SITE.hours.label}. Заказ в наличии соберём за 2 часа.
               </p>
             ) : (
               <div className="grid gap-4 sm:grid-cols-[1fr_2fr]">

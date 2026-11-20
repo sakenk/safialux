@@ -13,11 +13,15 @@ export default function ContactsBlock({ headingLevel = "h2" }: { headingLevel?: 
         </div>
         <div className="flex gap-3">
           <IconPin className="mt-0.5 shrink-0 text-cobalt" />
-          <address className="not-italic">
-            <span className="font-medium">{SITE.address.city}, {SITE.address.street}</span>
-            <br />
-            <span className="text-ink-soft">{SITE.address.detail}</span>
-          </address>
+          <div className="space-y-3">
+            {[SITE.address, SITE.address2].map((a) => (
+              <address key={a.street} className="not-italic">
+                <span className="font-medium">{a.city}, {a.street}</span>
+                <br />
+                <span className="text-ink-soft">{a.detail}</span>
+              </address>
+            ))}
+          </div>
         </div>
         <dl className="grid gap-4 sm:grid-cols-2">
           <div>

@@ -14,7 +14,7 @@ const BLOCKS = [
   {
     title: "Самовывоз",
     rows: [
-      ["Где", `${SITE.address.city}, ${SITE.address.street}, ${SITE.address.detail}`],
+      ["Где", `${SITE.address.city}, ${SITE.address.street}, ${SITE.address.detail}; ${SITE.address2.street}, ${SITE.address2.detail}`],
       ["Когда", SITE.hours.label],
       ["Срок", "Заказ в наличии соберём за 2 часа"],
       ["Стоимость", "Бесплатно"],
