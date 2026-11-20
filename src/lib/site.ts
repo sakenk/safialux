@@ -10,6 +10,7 @@ export const SITE = {
   phones: [
     { display: "+7 (707) 444-72-71", tel: "+77074447271" },
     { display: "+7 (705) 631-09-30", tel: "+77056310930" },
+    { display: "+7 (771) 406-19-01", tel: "+77714061901" },
   ],
   whatsapp: "77074447271",
   email: "smarttelefon4@gmail.com",
@@ -29,7 +30,7 @@ export const SITE = {
     country: "KZ",
   },
   geo2: { lat: 51.179075, lng: 71.454136 },
-  hours: { label: "Ежедневно 9:00–20:00", opens: "09:00", closes: "20:00" },
+  hours: { label: "Ежедневно 9:00–18:00", opens: "09:00", closes: "18:00" },
   /** С какого объёма заказ считается оптовым (подсветка в админке). */
   wholesale: { qty: 10, total: 1_000_000 },
 } as const;
